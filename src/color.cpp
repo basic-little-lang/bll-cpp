@@ -1,3 +1,4 @@
+#include <string>
 #include "include/color.hpp"
 
 std::string color::color_to_string(color::Color color) {
