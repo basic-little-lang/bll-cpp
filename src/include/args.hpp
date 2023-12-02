@@ -1,6 +1,6 @@
 
-#ifndef ARGS_HPP_
-#define ARGS_HPP_
+#ifndef _ARGS_HPP_
+#define _ARGS_HPP_
 
 #include <string>
 #include <vector>
