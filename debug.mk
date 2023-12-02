@@ -1,8 +1,8 @@
 CC = g++
-CCFLAGS = -g -c -Wall
+CCFLAGS = -g -c -Wall --std=c++11
 
 LINKER = g++
-LINKERFLAGS = -Wall -o
+LINKERFLAGS = -Wall --std=c++11 -o
 
 PROG = target
 
