@@ -8,6 +8,11 @@ int main(int argc, char const *argv[]) {
 
     args::Result* args_result = args::build(args_vec);
 
+    if (!args_result->success) {
+        
+        return 1;
+    }
+
 
     std::cout << args_result->data->get_file_name() << '\n';
 
