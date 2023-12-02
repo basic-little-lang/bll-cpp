@@ -22,6 +22,10 @@ bool color::is_foreground(color::Color color) {
     return (code >= 30 && code <= 97);
 }
 
+std::string color::format_color(std::string str, color::Color color) {
+    return color::color_to_string(color) + str + color::color_to_string(color::Color::RESET);
+}
+
 unsigned short color::code_for_color(color::Color color) {
 
     switch (color) {

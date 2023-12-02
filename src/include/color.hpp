@@ -49,6 +49,7 @@ namespace color {
     };
 
     std::string color_to_string(Color color);
+    std::string format_color(std::string str, Color color);
     bool is_foreground(Color color);
     unsigned short code_for_color(Color color);
 
