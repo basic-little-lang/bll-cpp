@@ -20,8 +20,5 @@ int main(int argc, char const *argv[]) {
     delete args_result->data;
     delete args_result;
 
-    std::cout << color::color_to_string(color::Color::FOREGROUND_RED) << "hi" << '\n';
-    std::cout << color::color_to_string(color::Color::FOREGROUND_BLACK) << color::color_to_string(color::Color::BACKGROUND_CYAN) << "hi" << '\n';
-
     return 0;
 }
