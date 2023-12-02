@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]) {
         goto exit_args;
     }
 
-    std::cout << args_result->data->get_file_name() << '\n';
+    
 
     exit_args:
         delete args_result->data;
