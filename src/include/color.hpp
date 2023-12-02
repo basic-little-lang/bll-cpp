@@ -2,6 +2,8 @@
 #ifndef _COLOR_HPP_
 #define _COLOR_HPP_
 
+#include <string>
+
 namespace color {
 
     enum class Color {
@@ -46,7 +48,9 @@ namespace color {
         UNDERLINE,
     };
 
-    unsigned short code_for_color(Color& color);
+    std::string color_to_string(Color color);
+    bool is_foreground(Color color);
+    unsigned short code_for_color(Color color);
 
 }
 
