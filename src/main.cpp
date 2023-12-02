@@ -1,5 +1,18 @@
+#include <iostream>
+#include "include/args.hpp"
+
 
 int main(int argc, char const *argv[]) {
+
+    std::vector<std::string> args_vec(argv, argv + argc);
+
+    args::Result* args_result = args::build(args_vec);
+
+
+    std::cout << args_result->data->get_file_name() << '\n';
+
+    delete args_result->data;
+    delete args_result;
     
     return 0;
 }
