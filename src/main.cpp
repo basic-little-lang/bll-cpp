@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <string>
 #include "include/args.hpp"
 #include "include/color.hpp"
 #include "include/filereader.hpp"
