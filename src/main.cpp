@@ -48,6 +48,11 @@ int main(int argc, char const *argv[]) {
     }
     std::cout << std::endl;
 
+    for (int i = 0; i < tokens->size(); i++) {
+        delete tokens->at(i);
+    }
+    delete tokens;
+
     exit_direct_tokens:
 
         for (int i = 0; i < direct_tokens->size(); i++) {
