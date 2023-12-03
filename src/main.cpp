@@ -2,6 +2,7 @@
 #include "include/args.hpp"
 #include "include/color.hpp"
 #include "include/filereader.hpp"
+#include "include/tokens.hpp"
 
 
 int main(int argc, char const *argv[]) {
@@ -22,14 +23,33 @@ int main(int argc, char const *argv[]) {
     if (contents == nullptr) {
         std::cout << color::format_color(color::format_color("error", color::Color::FOREGROUND_LIGHT_RED), color::Color::BOLD) << ": Cannot open file: " << args_result->data->get_file_name() << std::endl;
         exit_code = 1;
-        goto exit_file;
+        goto exit_args;
     }
 
-    std::cout << *contents << '\n';
+    std::vector<parser::tokens::Token*>* direct_tokens;
+    direct_tokens = parser::tokens::tokenize_string(contents);
+    if (direct_tokens == nullptr) {
+        std::cout << color::format_color(color::format_color("error", color::Color::FOREGROUND_LIGHT_RED), color::Color::BOLD) << ": Cannot parse file into direct tokens" << std::endl;
+        exit_code = 1;
+        goto exit_file;
+    }
+    
+    for (int i = 0; i < direct_tokens->size(); i++) {
+        std::cout << direct_tokens->at(i)->string() << ", ";
+    }
+    std::cout << std::endl;
 
-    delete contents;
+    for (int i = 0; i < direct_tokens->size(); i++) {
+        delete direct_tokens->at(i);
+    }
+    delete direct_tokens;
 
     exit_file:
+
+        delete contents;
+
+    exit_args:
+    
         delete args_result->data;
         delete args_result;
 
