@@ -47,7 +47,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             last_v = ((parser::NumberParsedToken*) last_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            last_v = vars->at(((parser::VarParsedToken*) last_token)->get_name());
+                            last_v = (*vars)[((parser::VarParsedToken*) last_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -59,7 +59,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             next_v = ((parser::NumberParsedToken*) next_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            next_v = vars->at(((parser::VarParsedToken*) next_token)->get_name());
+                            next_v = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -85,7 +85,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             last_v = ((parser::NumberParsedToken*) last_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            last_v = vars->at(((parser::VarParsedToken*) last_token)->get_name());
+                            last_v = (*vars)[((parser::VarParsedToken*) last_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -97,7 +97,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             next_v = ((parser::NumberParsedToken*) next_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            next_v = vars->at(((parser::VarParsedToken*) next_token)->get_name());
+                            next_v = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -123,7 +123,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             last_v = ((parser::NumberParsedToken*) last_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            last_v = vars->at(((parser::VarParsedToken*) last_token)->get_name());
+                            last_v = (*vars)[((parser::VarParsedToken*) last_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -135,7 +135,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             next_v = ((parser::NumberParsedToken*) next_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            next_v = vars->at(((parser::VarParsedToken*) next_token)->get_name());
+                            next_v = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -161,7 +161,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             last_v = ((parser::NumberParsedToken*) last_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            last_v = vars->at(((parser::VarParsedToken*) last_token)->get_name());
+                            last_v = (*vars)[((parser::VarParsedToken*) last_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -173,7 +173,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             next_v = ((parser::NumberParsedToken*) next_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            next_v = vars->at(((parser::VarParsedToken*) next_token)->get_name());
+                            next_v = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -199,7 +199,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             last_v = ((parser::NumberParsedToken*) last_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            last_v = vars->at(((parser::VarParsedToken*) last_token)->get_name());
+                            last_v = (*vars)[((parser::VarParsedToken*) last_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -211,7 +211,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             next_v = ((parser::NumberParsedToken*) next_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            next_v = vars->at(((parser::VarParsedToken*) next_token)->get_name());
+                            next_v = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -237,7 +237,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             last_v = ((parser::NumberParsedToken*) last_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            last_v = vars->at(((parser::VarParsedToken*) last_token)->get_name());
+                            last_v = (*vars)[((parser::VarParsedToken*) last_token)->get_name()];
                             break;
                         default:
                             delete vars;
@@ -249,7 +249,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             next_v = ((parser::NumberParsedToken*) next_token)->get_number();
                             break;
                         case parser::ParsedTokenType::VAR:
-                            next_v = vars->at(((parser::VarParsedToken*) next_token)->get_name());
+                            next_v = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
                             break;
                         default:
                             delete vars;
