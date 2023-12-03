@@ -3,6 +3,7 @@
 #include <string>
 #include "include/args.hpp"
 #include "include/color.hpp"
+#include "include/execute.hpp"
 #include "include/filereader.hpp"
 #include "include/parser.hpp"
 #include "include/tokens.hpp"
@@ -44,11 +45,13 @@ int main(int argc, char const *argv[]) {
         exit_code = 1;
         goto exit_direct_tokens;
     }
-    
-    for (int i = 0; i < tokens->size(); i++) {
-        std::cout << tokens->at(i)->string() << ", ";
+
+    bool success;
+    success = execute::execute(tokens);
+    if (!success) {
+        std::cout << color::format_color(color::format_color("error", color::Color::FOREGROUND_LIGHT_RED), color::Color::BOLD) << ": Failed to run code" << std::endl;
+        exit_code = 1;
     }
-    std::cout << std::endl;
 
     for (int i = 0; i < tokens->size(); i++) {
         delete tokens->at(i);
