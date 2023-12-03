@@ -25,7 +25,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
             last_token = tokens->at(last_index);
         }
 
-        if (next_index < tokens->size()) {
+        if (!(next_index < tokens->size())) {
             next_token = nullptr;
         } else {
             next_token = tokens->at(next_index);
