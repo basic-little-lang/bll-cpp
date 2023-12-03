@@ -273,7 +273,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                             break;
                         case parser::ParsedTokenType::NUMBER:
                             switch (last_token->get_token_type()) {
-                                case parser::ParsedTokenType::NUMBER:
+                                case parser::ParsedTokenType::VAR:
                                     (*vars)[((parser::VarParsedToken*) last_token)->get_name()] = ((parser::NumberParsedToken*) next_token)->get_number();
                                 default:
                                     break;
