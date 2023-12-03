@@ -35,8 +35,6 @@ namespace parser {
         };
 
         class TokenBase : public Token {
-            protected:
-                TokenType token_type;
             public:
                 TokenBase(TokenType token_type) : Token(token_type) {};
                 std::string string() const;

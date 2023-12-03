@@ -2,6 +2,7 @@
 #include "include/args.hpp"
 #include "include/color.hpp"
 #include "include/filereader.hpp"
+#include "include/parser.hpp"
 #include "include/tokens.hpp"
 
 
@@ -33,16 +34,26 @@ int main(int argc, char const *argv[]) {
         exit_code = 1;
         goto exit_file;
     }
+
+    std::vector<parser::ParsedToken*>* tokens;
+    tokens = parser::convert(direct_tokens);
+    if (tokens == nullptr) {
+        std::cout << color::format_color(color::format_color("error", color::Color::FOREGROUND_LIGHT_RED), color::Color::BOLD) << ": Cannot parse file into tokens" << std::endl;
+        exit_code = 1;
+        goto exit_direct_tokens;
+    }
     
-    for (int i = 0; i < direct_tokens->size(); i++) {
-        std::cout << direct_tokens->at(i)->string() << ", ";
+    for (int i = 0; i < tokens->size(); i++) {
+        std::cout << tokens->at(i)->string() << ", ";
     }
     std::cout << std::endl;
 
-    for (int i = 0; i < direct_tokens->size(); i++) {
-        delete direct_tokens->at(i);
-    }
-    delete direct_tokens;
+    exit_direct_tokens:
+
+        for (int i = 0; i < direct_tokens->size(); i++) {
+            delete direct_tokens->at(i);
+        }
+        delete direct_tokens;
 
     exit_file:
 
