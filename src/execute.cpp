@@ -296,7 +296,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
 
                     if (next_token->get_token_type() == parser::ParsedTokenType::VAR) {
                         std::string key = ((parser::VarParsedToken*) next_token)->get_name();
-                        std::cout << key << " = " << std::setprecision(16) << vars->at(key) << std::endl;
+                        std::cout << key << " = " << std::setprecision(64) << vars->at(key) << std::endl;
                     } else {
                         delete vars;
                         return false;
