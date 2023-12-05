@@ -305,6 +305,33 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                 }
                 break;
 
+            case parser::ParsedTokenType::COPY:
+                {
+                    if (next_token == nullptr) {
+                        delete vars;
+                        return false;
+                    }
+
+                    int next_two_index = i + 2;
+
+                    parser::ParsedToken* next_two_token;
+
+                    if (!(next_two_index < tokens->size())) {
+                        next_two_token = nullptr;
+                    } else {
+                        next_two_token = tokens->at(next_two_index);
+                    }
+
+                    if (next_two_token == nullptr) {
+                        delete vars;
+                        return false;
+                    }
+
+                    (*vars)[((parser::VarParsedToken*) next_two_token)->get_name()] = (*vars)[((parser::VarParsedToken*) next_token)->get_name()];
+                    
+                }
+                break;
+
             default:
                 break;
         }

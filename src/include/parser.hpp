@@ -18,6 +18,7 @@ namespace parser {
         NUMBER,
         EQUAL,
         PRINT,
+        COPY,
         VAR,
     };
 

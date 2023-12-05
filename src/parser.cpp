@@ -8,6 +8,9 @@ parser::ParsedToken* string_to_keyword(std::string& str) {
     if (str == "print") {
         return new parser::BaseParsedToken(parser::ParsedTokenType::PRINT);
     }
+    if (str == "copy") {
+        return new parser::BaseParsedToken(parser::ParsedTokenType::COPY);
+    }
 
     return nullptr;
 }
