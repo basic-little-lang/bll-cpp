@@ -29,6 +29,7 @@ int main(int argc, char const *argv[]) {
         exit_code = 1;
         goto exit_args;
     }
+    contents->push_back('\n');
 
     std::vector<parser::tokens::Token*>* direct_tokens;
     direct_tokens = parser::tokens::tokenize_string(contents);
