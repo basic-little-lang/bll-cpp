@@ -69,7 +69,7 @@ std::vector<parser::tokens::Token*>* parser::tokens::tokenize_string(std::string
             skip_comment = true;
             continue;
         }
-        if (std::iswspace(chr)) {
+        if (std::isspace(chr)) {
             tokens->push_back(new parser::tokens::TokenBase(parser::tokens::TokenType::WHITESPACE));
             free_if_fail = true;
             continue;
@@ -95,7 +95,7 @@ std::vector<parser::tokens::Token*>* parser::tokens::tokenize_string(std::string
 
                     char ch = str->at(next_index);
 
-                    if (std::iswspace(ch)) {
+                    if (std::isspace(ch)) {
                         tokens->push_back(new parser::tokens::TokenBase(parser::tokens::TokenType::SUBTRACT));
                     } else {
                         tokens->push_back(new parser::tokens::TokenBase(parser::tokens::TokenType::NEGITIVE));
