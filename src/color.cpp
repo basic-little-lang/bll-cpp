@@ -106,4 +106,6 @@ unsigned short color::code_for_color(color::Color color) {
             return 4;
     }
 
+    return 0;
+
 }
