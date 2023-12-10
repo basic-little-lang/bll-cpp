@@ -54,14 +54,14 @@ int main(int argc, char const *argv[]) {
         exit_code = 1;
     }
 
-    for (int i = 0; i < tokens->size(); i++) {
+    for (unsigned long int i = 0; i < tokens->size(); i++) {
         delete tokens->at(i);
     }
     delete tokens;
 
     exit_direct_tokens:
 
-        for (int i = 0; i < direct_tokens->size(); i++) {
+        for (unsigned long int i = 0; i < direct_tokens->size(); i++) {
             delete direct_tokens->at(i);
         }
         delete direct_tokens;
