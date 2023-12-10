@@ -59,7 +59,7 @@ std::vector<parser::ParsedToken*>* parser::convert(std::vector<parser::tokens::T
                     }
 
                     if (std::isdigit(token_char->get_data()) && next_is_whitespace) {
-                        bool is_negitive = string.find("-") != -1;
+                        bool is_negitive = string.find("-") != (unsigned long int) -1;
                         std::string str = string;
                         if (is_negitive) {
                             str.replace(string.find("-"), 1, "");
