@@ -19,7 +19,7 @@ std::vector<parser::ParsedToken*>* parser::convert(std::vector<parser::tokens::T
     std::vector<parser::ParsedToken*>* parsered_tokens = new std::vector<parser::ParsedToken*>;
     std::vector<parser::tokens::Token*> buffer;
 
-    for (int i = 0; i < direct_tokens->size(); i++) {
+    for (unsigned long int i = 0; i < direct_tokens->size(); i++) {
         parser::tokens::Token* token = direct_tokens->at(i);
 
         switch (token->get_token_type()) {
@@ -31,7 +31,7 @@ std::vector<parser::ParsedToken*>* parser::convert(std::vector<parser::tokens::T
 
                     std::string string;
 
-                    for (int j = 0; j < buffer.size(); j++) {
+                    for (unsigned long int j = 0; j < buffer.size(); j++) {
                         switch (buffer.at(j)->get_token_type()) {
                             case parser::tokens::TokenType::CHAR:
                                 {
@@ -51,7 +51,7 @@ std::vector<parser::ParsedToken*>* parser::convert(std::vector<parser::tokens::T
                     }
 
                     bool next_is_whitespace = true;
-                    int next_index = i + 1;
+                    unsigned long int next_index = i + 1;
                     if (next_index < direct_tokens->size()) {
                         parser::tokens::Token* next = direct_tokens->at(next_index);
 
