@@ -11,14 +11,14 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
     std::map<std::string, double>* vars = new std::map<std::string, double>;
     double last_val = 0;
 
-    for (int i = 0; i < tokens->size(); i++) {
+    for (unsigned long int i = 0; i < tokens->size(); i++) {
         parser::ParsedToken* token = tokens->at(i);
 
         parser::ParsedToken* last_token;
         parser::ParsedToken* next_token;
 
-        int last_index = i - 1;
-        int next_index = i + 1;
+        unsigned long int last_index = i - 1;
+        unsigned long int next_index = i + 1;
 
         if (last_index < 0) {
             last_token = nullptr;
@@ -312,7 +312,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
                         return false;
                     }
 
-                    int next_two_index = i + 2;
+                    unsigned long int next_two_index = i + 2;
 
                     parser::ParsedToken* next_two_token;
 
