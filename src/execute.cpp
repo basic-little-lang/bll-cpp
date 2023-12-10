@@ -17,7 +17,7 @@ bool execute::execute(std::vector<parser::ParsedToken*> *tokens) {
         parser::ParsedToken* last_token;
         parser::ParsedToken* next_token;
 
-        unsigned long int last_index = i - 1;
+        unsigned long int last_index = i == 0 ? 0 : i - 1;
         unsigned long int next_index = i + 1;
 
         if (last_index < 0) {
