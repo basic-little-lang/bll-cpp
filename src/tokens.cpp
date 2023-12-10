@@ -52,7 +52,7 @@ std::vector<parser::tokens::Token*>* parser::tokens::tokenize_string(std::string
     bool skip_comment = false;
     bool free_if_fail = false;
 
-    for (int i = 0; i < str->length(); i++) {
+    for (unsigned long int i = 0; i < str->length(); i++) {
         char chr = str->at(i);
 
         if (chr == '\n') {
@@ -82,10 +82,10 @@ std::vector<parser::tokens::Token*>* parser::tokens::tokenize_string(std::string
                 break;
             case '-':
                 {
-                    int next_index = i + 1;
+                    unsigned long int next_index = i + 1;
                     if (next_index > str->length() && next_index > 0) {
                         if (free_if_fail) {
-                            for (int j = 0; j < tokens->size(); j++) {
+                            for (unsigned long int j = 0; j < tokens->size(); j++) {
                                 delete tokens->at(j);
                             }
                         }
